@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAGORUST</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Экран загрузки -->
+    <div id="loadingScreen" class="loading-screen">
+        <button id="humanButton" class="human-button">Я ЧЕЛОВЕК</button>
+    </div>
+
+    <!-- Основной экран -->
+    <div id="mainScreen" class="main-screen">
+        <div class="content">
+            <button id="playButton" class="play-button">Начать играть</button>
+            <!-- Блок с текстом -->
+            <p class="help-text">
+                Если у вас появились проблемы с установкой клиента,<br>
+                напишите тикет нам в <a href="https://discord.gg/eAre3dEn4r" target="_blank">Discord</a>, мы обязательно вам поможем!
+            </p>
+        </div>
+        <!-- Текст с ссылкой -->
+        <p class="creator-text">Сайт создан by <a href="https://dragorust261.gamestores.app/" target="_blank" class="bold">DRAGORUST</a></p>
+    </div>
+
+    <!-- Меню с кнопками -->
+    <div id="menu" class="menu">
+        <a href="https://drive.google.com/file/d/1UenuMM0nSTY9XAo5cgfqOVkmZJmm9247/view?usp=sharing" target="_blank" class="menu-button">
+            <i class="fab fa-google-drive"></i> Google Disk
+        </a>
+        <button class="menu-button soon-button">
+            <i class="fas fa-file-download"></i> Торрент <span class="soon-text">Soon</span>
+        </button>
+        <a href="https://mega.nz/file/iNpShSxZ#iARneKzI7ZFI_NlZ1ll7pMVaZL8eP1_wNKgzVx3fJd0" target="_blank" class="menu-button">
+            <i class="mega-icon">M</i> MEGA
+        </a>
+        <button class="menu-button soon-button">
+            <i class="fab fa-yandex"></i> Яндекс.Диск <span class="soon-text">Soon</span>
+        </button>
+    </div>
+
+    <!-- Сообщение "Совсем скоро" -->
+    <div id="soonMessage" class="soon-message">
+        Совсем скоро мы добавим эти файлообменники!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

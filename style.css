@@ -1,0 +1,188 @@
+/* Общие стили */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Экран загрузки */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a; /* Темно-серый фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для кнопки "Я ЧЕЛОВЕК" */
+.human-button {
+    background-color: #4CAF50; /* Зеленый цвет */
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute; /* Кнопка будет в случайном месте */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Плавные переходы */
+}
+
+    /* Эффекты при наведении */
+    .human-button:hover {
+        background-color: #45a049; /* Темно-зеленый цвет */
+        box-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50; /* Свечение */
+    }
+
+/* Основной экран */
+.main-screen {
+    display: none; /* Сначала скрыт */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Черный фон */
+    color: #fff;
+    text-align: center;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.play-button {
+    background-color: #7289da;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Стили для текста с предложением помощи */
+.help-text {
+    margin-top: 20px; /* Отступ сверху */
+    font-size: 0.9em; /* Размер шрифта */
+    color: #a0a0a0; /* Серый цвет текста */
+    text-align: center; /* Выравнивание по центру */
+    line-height: 1.5; /* Межстрочный интервал */
+}
+
+    .help-text a {
+        color: #7289da; /* Цвет ссылки (как в Discord) */
+        text-decoration: none; /* Убираем подчеркивание */
+        font-weight: bold; /* Жирный шрифт */
+    }
+
+        .help-text a:hover {
+            text-decoration: underline; /* Подчеркивание при наведении */
+        }
+
+/* Текст внизу страницы */
+.creator-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9em;
+    color: #fff;
+}
+
+    .creator-text a {
+        color: #fff; /* Белый цвет текста */
+        text-decoration: none; /* Убираем подчеркивание */
+        font-weight: bold; /* Жирный шрифт */
+    }
+
+        .creator-text a:hover {
+            text-decoration: underline; /* Подчеркивание при наведении */
+        }
+
+/* Меню с кнопками */
+.menu {
+    display: none; /* Сначала скрыто */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    padding: 20px; /* Отступы внутри меню */
+    border-radius: 10px;
+    text-align: left; /* Выравниваем текст кнопок по левому краю */
+    width: 300px; /* Ширина меню */
+    max-width: 90%; /* Чтобы меню не выходило за пределы экрана на мобильных устройствах */
+}
+
+.menu-button {
+    display: flex;
+    align-items: center; /* Выравниваем иконку и текст по вертикали */
+    width: 90%; /* Уменьшаем ширину кнопок, чтобы они не занимали всю ширину меню */
+    padding: 10px; /* Отступы внутри кнопок */
+    margin: 8px 0; /* Отступы между кнопками */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Уменьшаем закругления для более прямоугольного вида */
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9em; /* Размер шрифта */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+    margin-left: 0; /* Сдвигаем кнопки влево */
+}
+
+    .menu-button:hover {
+        background-color: #444;
+    }
+
+    /* Стили для иконок */
+    .menu-button i {
+        margin-right: 10px; /* Отступ между иконкой и текстом */
+        font-size: 1.2em; /* Размер иконок */
+    }
+
+/* Стили для иконки MEGA (буква M) */
+.mega-icon {
+    display: inline-block;
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+    font-size: 1.2em; /* Размер иконки */
+    font-weight: bold; /* Жирный шрифт */
+    color: #ffffff; /* Белый цвет */
+}
+/* Стили для текста "Soon" */
+.soon-text {
+    margin-left: 10px; /* Отступ слева */
+    font-size: 0.8em; /* Размер шрифта */
+    color: #ffcc00; /* Желтый цвет */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+/* Стили для сообщения "Совсем скоро" */
+.soon-message {
+    display: none; /* Сначала скрыто */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000; /* Чтобы сообщение было поверх других элементов */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
+}
+
+/* Стили для кнопок с текстом "Soon" */
+.soon-button {
+    cursor: not-allowed; /* Курсор "недоступно" */
+    opacity: 0.7; /* Немного прозрачности */
+}

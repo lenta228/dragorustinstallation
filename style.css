@@ -81,7 +81,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+    background: rgba(242, 237, 237); /* Полупрозрачный черный фон */
     color: #fff;
     text-align: center;
 }

@@ -23,7 +23,7 @@ body, html {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(242, 237, 237);
     border: 1px solid rgba(255, 255, 255, 0.2);
     animation: moveCubes 10s linear infinite;
 }

@@ -4,7 +4,7 @@ body, html {
     padding: 0;
     font-family: 'Arial', sans-serif;
     overflow: hidden;
-    background: #fffcfc;
+    background: #000;
     color: #fff;
 }
 
@@ -23,7 +23,7 @@ body, html {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: rgba(242, 237, 237);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     animation: moveCubes 10s linear infinite;
 }
@@ -81,7 +81,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(242, 237, 237); /* Полупрозрачный черный фон */
+    background: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
     color: #fff;
     text-align: center;
 }

@@ -3,45 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DRAGORUST - Официальный сайт для скачивания клиента Rust">
+    <meta name="keywords" content="rust, dragorust, игры, клиент rust, скачать rust">
+    <meta name="theme-color" content="#7289da">
+    <meta property="og:title" content="DRAGORUST - Скачать Rust">
+    <meta property="og:description" content="Скачайте клиент Rust с нашего официального сайта. Быстрая загрузка, поддержка 24/7">
+    <meta property="og:image" content="./assets/og-image.jpg">
     <title>DRAGORUST</title>
+    
+    <!-- Preload критических ресурсов -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
+    
+    <!-- Стили -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    
+    <!-- Предзагрузка шрифтов -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
     <!-- Основной экран -->
     <div id="mainScreen" class="main-screen">
-         <div class="background-cubes">
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-    </div>
-		<div class="content">
-            <button id="playButton" class="play-button">Начать играть 🚀</button>
+        <div class="background-cubes">
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+        </div>
+        <div class="content">
+            <button id="playButton" class="play-button" style="opacity: 0; transform: translateY(20px);">
+                Начать играть <i class="fas fa-download"></i>
+            </button>
             <p class="help-text">
                 Если у вас возникли проблемы с установкой клиента,<br>
-                напишите нам в <a href="https://discord.gg/eAre3dEn4r" target="_blank">Discord</a>, мы поможем!
+                напишите нам в <a href="https://discord.gg/eAre3dEn4r" target="_blank" rel="noopener noreferrer">
+                    Discord <i class="fab fa-discord"></i>
+                </a>, мы поможем!
             </p>
         </div>
-        <p class="creator-text">Сайт создан by <a href="https://dragorust261.gamestores.app/" target="_blank" class="bold">DRAGORUST</a></p>
+        <p class="creator-text">
+            Сайт создан by <a href="https://t.me/fakerplayers" target="_blank" rel="noopener noreferrer" class="creator-links">fakerplayers</a>
+        </p>
     </div>
 
     <!-- Меню с кнопками -->
-    <div id="menu" class="menu">
-        <a href="https://drive.google.com/file/d/1UenuMM0nSTY9XAo5cgfqOVkmZJmm9247/view?usp=sharing" target="_blank" class="menu-button">
-            <i class="fab fa-google-drive"></i> Google Disk
-        </a>
-        <button class="menu-button soon-button">
-            <i class="fas fa-file-download"></i> Торрент <span class="soon-text">Soon</span>
-        </button>
-        <a href="https://mega.nz/file/iNpShSxZ#iARneKzI7ZFI_NlZ1ll7pMVaZL8eP1_wNKgzVx3fJd0" target="_blank" class="menu-button">
-            <i class="mega-icon">M</i> MEGA
-        </a>
-        <button class="menu-button soon-button">
-            <i class="fab fa-yandex"></i> Яндекс.Диск <span class="soon-text">Soon</span>
-        </button>
+    <div class="menus-container">
+        <!-- Левое меню с инструкциями -->
+        <div id="instructionsMenu" class="menu instructions-menu">
+            <div class="menu-title">
+                <i class="fas fa-book"></i> Инструкция по установке
+            </div>
+            <div class="instruction-text">
+                <ol>
+                    <li>Нажимаем на любой файловый обменник слева и начинаем установку.</li>
+                    <li>После установки распаковываем архив WinRAR на рабочий стол.</li>
+                    <li>Запускаем RustClient.exe и заходим на наш сервер.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Разделитель -->
+        <div class="menu-divider"></div>
+
+        <!-- Правое меню с кнопками загрузки -->
+        <div id="menu" class="menu download-menu">
+            <div class="menu-title">
+                <i class="fas fa-cloud-download-alt"></i> Скачать клиент
+            </div>
+            <a href="https://drive.google.com/file/d/1UenuMM0nSTY9XAo5cgfqOVkmZJmm9247/view?usp=sharing" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="menu-button">
+                <i class="fab fa-google-drive"></i> Google Disk
+            </a>
+            <button class="menu-button soon-button" disabled>
+                <i class="fas fa-file-download"></i> Торрент <span class="soon-text">Soon</span>
+            </button>
+            <a href="https://mega.nz/file/iNpShSxZ#iARneKzI7ZFI_NlZ1ll7pMVaZL8eP1_wNKgzVx3fJd0" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="menu-button">
+                <i class="mega-icon">M</i> MEGA
+            </a>
+            <button class="menu-button soon-button" disabled>
+                <i class="fab fa-yandex"></i> Яндекс.Диск <span class="soon-text">Soon</span>
+            </button>
+        </div>
     </div>
 
     <!-- 3D квадраты на заднем фоне -->
@@ -54,6 +113,26 @@
         <div class="cube"></div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Виджет с промокодом -->
+    <div class="promo-widget" id="promoWidget">
+        <button class="close-button" id="closePromoWidget">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="promo-widget-title">
+            <a href="https://dragorust261.gamestores.app/" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            Промокод для старта
+        </div>
+        <div class="promo-code" id="promoCode">
+            <span>START</span>
+            <button class="copy-button" id="copyButton">
+                Скопировать
+            </button>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="script.js" defer></script>
 </body>
 </html>

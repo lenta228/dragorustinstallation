@@ -43,7 +43,7 @@
             <div class="cube"></div>
         </div>
         <div class="content">
-            <button id="playButton" class="play-button" style="opacity: 0; transform: translateY(20px);">
+            <button id="playButton" class="play-button button-initial">
                 Начать играть <i class="fas fa-download"></i>
             </button>
             <p class="help-text">
@@ -134,5 +134,53 @@
 
     <!-- Скрипты -->
     <script src="script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Анимация кнопки "Начать играть"
+            setTimeout(() => {
+                const playButton = document.getElementById('playButton');
+                if (playButton) {
+                    playButton.style.opacity = '1';
+                    playButton.style.transform = 'translateY(0)';
+                }
+            }, 500);
+
+            // Отображение виджета с промокодом
+            setTimeout(() => {
+                const promoWidget = document.querySelector('.promo-widget');
+                if (promoWidget) {
+                    promoWidget.style.opacity = '1';
+                    promoWidget.style.transform = 'translateX(0)';
+                }
+            }, 1000);
+
+            // Копирование промокода
+            const copyButton = document.querySelector('.copy-button');
+            if (copyButton) {
+                copyButton.addEventListener('click', function() {
+                    const promoCode = document.querySelector('.promo-code span').textContent;
+                    navigator.clipboard.writeText(promoCode).then(() => {
+                        copyButton.textContent = 'Скопировано!';
+                        setTimeout(() => {
+                            copyButton.textContent = 'Копировать';
+                        }, 2000);
+                    });
+                });
+            }
+
+            // Закрытие виджета
+            const closeButton = document.querySelector('.close-button');
+            if (closeButton) {
+                closeButton.addEventListener('click', function() {
+                    const promoWidget = document.querySelector('.promo-widget');
+                    promoWidget.style.opacity = '0';
+                    promoWidget.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        promoWidget.style.display = 'none';
+                    }, 300);
+                });
+            }
+        });
+    </script>
 </body>
 </html>

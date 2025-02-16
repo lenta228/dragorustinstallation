@@ -1,4 +1,4 @@
-/* РћР±С‰РёРµ СЃС‚РёР»Рё */
+/* Общие стили */
 body, html {
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ body, html {
     min-height: 100vh;
 }
 
-/* 3D РєРІР°РґСЂР°С‚С‹ РЅР° Р·Р°РґРЅРµРј С„РѕРЅРµ */
+/* 3D квадраты на заднем фоне */
 .background-cubes {
     position: fixed;
     top: 0;
@@ -32,7 +32,7 @@ body, html {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
     transform-style: preserve-3d;
     perspective: 1000px;
-    top: -20px; /* РќР°С‡Р°Р»СЊРЅР°СЏ РїРѕР·РёС†РёСЏ РЅР°Рґ СЌРєСЂР°РЅРѕРј */
+    top: -20px; /* Начальная позиция над экраном */
 }
 
 @keyframes moveCubes {
@@ -46,7 +46,7 @@ body, html {
     }
 }
 
-/* РџРѕР·РёС†РёРё Рё Р·Р°РґРµСЂР¶РєРё РєСѓР±РёРєРѕРІ */
+/* Позиции и задержки кубиков */
 .cube:nth-child(1) { left: 20%; animation-duration: 20s; }
 .cube:nth-child(2) { left: 50%; animation-duration: 18s; }
 .cube:nth-child(3) { left: 70%; animation-duration: 16s; }
@@ -54,7 +54,7 @@ body, html {
 .cube:nth-child(5) { left: 80%; animation-duration: 19s; }
 .cube:nth-child(6) { left: 40%; animation-duration: 21s; }
 
-/* РћСЃРЅРѕРІРЅРѕР№ СЌРєСЂР°РЅ */
+/* Основной экран */
 .main-screen {
     position: fixed;
     top: 0;
@@ -159,7 +159,7 @@ body, html {
     color: #8ba0e3;
         }
 
-/* РњРµРЅСЋ СЃ РєРЅРѕРїРєР°РјРё */
+/* Меню с кнопками */
 .menus-container {
     display: none;
     position: fixed;
@@ -301,7 +301,7 @@ body, html {
     border: 1px solid rgba(255, 215, 0, 0.1);
 }
 
-/* Р”РѕР±Р°РІР»СЏРµРј РїРѕРґСЃРІРµС‚РєСѓ РїСЂРё РЅР°РІРµРґРµРЅРёРё РЅР° Р°РєС‚РёРІРЅС‹Рµ РєРЅРѕРїРєРё */
+/* Добавляем подсветку при наведении на активные кнопки */
 .menu-button:not(.soon-button)::before {
     content: '';
     position: absolute;
@@ -318,7 +318,7 @@ body, html {
     transform: translateX(100%);
 }
 
-/* РђРґР°РїС‚РёРІРЅРѕСЃС‚СЊ */
+/* Адаптивность */
 @media (max-width: 768px) {
     .content {
         padding: 16px;
@@ -446,7 +446,7 @@ body, html {
     }
 }
 
-/* РСЃРїСЂР°РІР»РµРЅРёРµ РґР»СЏ РѕС‡РµРЅСЊ РјР°Р»РµРЅСЊРєРёС… СЌРєСЂР°РЅРѕРІ */
+/* Исправление для очень маленьких экранов */
 @media (max-width: 320px) {
     .menus-container {
         width: 100%;
@@ -473,7 +473,7 @@ body, html {
     }
 }
 
-/* РСЃРїСЂР°РІР»РµРЅРёРµ РґР»СЏ Р»Р°РЅРґС€Р°С„С‚РЅРѕР№ РѕСЂРёРµРЅС‚Р°С†РёРё */
+/* Исправление для ландшафтной ориентации */
 @media (max-height: 600px) and (orientation: landscape) {
     .menus-container {
         top: 0;
@@ -563,7 +563,7 @@ body, html {
     color: #00a2ff;
 }
 
-/* РњРµРЅСЋ СЃ РёРЅСЃС‚СЂСѓРєС†РёСЏРјРё */
+/* Меню с инструкциями */
 .menu-title {
     color: #7289da;
     font-size: 1.2em;
@@ -606,7 +606,7 @@ body, html {
     color: #7289da;
 }
 
-/* РђРґР°РїС‚РёРІРЅРѕСЃС‚СЊ РґР»СЏ РјРµРЅСЋ */
+/* Адаптивность для меню */
 @media (max-width: 1200px) {
     .menus-container {
         flex-direction: column;
@@ -660,4 +660,90 @@ body, html {
 
 .instruction-text li:last-child {
     margin-bottom: 0;
+}
+
+/* Стили для начальной анимации кнопки */
+.button-initial {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Стили для виджета с промокодом */
+.promo-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(114, 137, 218, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    color: #fff;
+    z-index: 1000;
+    width: 300px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.close-button:hover {
+    color: #fff;
+}
+
+.promo-widget-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.promo-widget-title a {
+    color: #7289da;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.promo-widget-title a:hover {
+    color: #8ba0e3;
+}
+
+.promo-code {
+    background: rgba(114, 137, 218, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1em;
+    border: 1px solid rgba(114, 137, 218, 0.2);
+}
+
+.copy-button {
+    background: #7289da;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s;
+}
+
+.copy-button:hover {
+    background: #8ba0e3;
 }
